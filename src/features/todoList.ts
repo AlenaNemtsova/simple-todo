@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ToDo } from '../models/todo-items';
+import { v4 as uuid } from 'uuid'; //для генерации уникальных идентификаторов
 
 export interface TodoState {
   todos: ToDo[];
@@ -18,7 +19,8 @@ export const todoSlice = createSlice({
     createAction: (state, action: PayloadAction<string>) => {
       //action: PayloadAction<> это дженерик-тип
       const newToDo: ToDo = {
-        id: state.todos.length,
+        // id: state.todos.length, //вместо длины масива используем генератор id-шек
+        id: uuid(),
         text: action.payload, //payload – объект, в который передаём text
         isDone: false,
       };

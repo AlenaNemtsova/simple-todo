@@ -4,10 +4,10 @@ import { ToDo } from '../models/todo-items';
 export const ViewList = (props: { todos: ToDo[] }) => {
   return (
     <div className='container'>
-      {props.todos.map((todo: ToDo, idx: number) => {
+      {props.todos.map((todo: ToDo) => {
         return (
           <ListItem
-            key={idx}
+            key={todo.id}
             todo={todo}
           />
         );

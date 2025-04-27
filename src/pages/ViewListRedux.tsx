@@ -10,10 +10,10 @@ export const ViewListRedux = () => {
 
   return (
     <div className='container'>
-      {todoList.map((todo: ToDo, idx: number) => {
+      {todoList.map((todo: ToDo) => {
         return (
           <ListItem
-            key={idx}
+            key={todo.id}
             todo={todo}
           />
         );
