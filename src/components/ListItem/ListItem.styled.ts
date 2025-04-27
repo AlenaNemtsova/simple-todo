@@ -8,5 +8,6 @@ interface StyledLinkProps {
 export const StyledLink = styled(Link)<StyledLinkProps>`
   text-decoration: none;
   padding: 10px;
-  color: ${({ $isDone }) => ($isDone ? 'green' : 'salmon')};
+  font-size: 18px;
+  color: ${({ $isDone }) => ($isDone ? '#4aa83d' : '#a83d49')};
 `;

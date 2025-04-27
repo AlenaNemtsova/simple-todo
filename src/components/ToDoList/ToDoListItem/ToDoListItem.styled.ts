@@ -1,17 +1,18 @@
 import styled from 'styled-components';
+import { Theme } from '../../../models/themes';
 
-export const ToDoItem = styled.li`
+export const ToDoItem = styled.li<{ theme: Theme }>`
   width: 100%;
   min-height: 50px;
   font-size: 14px;
   font-weight: 500;
-  color: #444;
+  color: ${({ theme }) => theme.colors.textPrimary};
   line-height: 22px;
 
   display: flex;
   justify-content: space-between;
 
-  background: #fff;
+  background-color: ${({ theme }) => theme.colors.backgroundTertiary};
   border-radius: 5px;
   position: relative;
   box-shadow: 0 1px 2px rgba(44, 62, 80, 0.1);

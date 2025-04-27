@@ -1,14 +1,16 @@
 import styled from 'styled-components';
+import { Theme } from '../../models/themes';
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled.div<{ theme: Theme }>`
   width: 100%;
-  height: 80px;
+  height: 90px;
 
   position: relative;
-  padding: 15px;
+  padding: 20px;
   z-index: 5;
 
-  background-color: #4682b4;
+  background-color: ${({ theme }) => theme.colors.backgroundPrimary};
+  transition: background-color 0.2s;
   box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -26,7 +28,7 @@ export const FormField = styled.input`
   font-weight: 400;
   text-indent: 18px;
   padding: 0 60px 0 0;
-  background: #ffffff33;
+  background: rgb(255, 255, 255, 0.3);
   border-radius: 5px 25px 25px 5px;
   border: 0;
   box-shadow: none;
@@ -40,7 +42,7 @@ export const FormControl = styled.button<{ icon: string }>`
   height: 50px;
   background: transparent url(${({ icon }) => icon}) no-repeat center/cover;
   position: absolute;
-  top: 15px;
+  top: 20px;
   right: 15px;
   z-index: 2;
 

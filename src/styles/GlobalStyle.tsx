@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import normalize from 'styled-normalize';
+import { Theme } from '../models/themes';
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<{ theme: Theme }>`
     ${normalize}
     
     * {
@@ -9,7 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: #edf0f1;
+        background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+        transition: background-color 0.2s;
         padding: 50px 0 0 0;
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
@@ -26,6 +28,6 @@ export const GlobalStyle = createGlobalStyle`
 
     h1 {
         font-size: 30px;
-        color: salmon;
+        color: ${({ theme }) => theme.colors.textPrimary};
     }
 `;

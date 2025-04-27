@@ -1,14 +1,11 @@
-// import { useState } from 'react';
 import { setInputValue, clearInput } from '../../features/formInputSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { FormBlock, FormWrapper, FormLabel, FormControl, FormField } from './Form.styled';
-// import './Form.scss'; //эти стили уже не нужны, используем styled-components
 import plusIcon from '../../assets/images/plus.png';
 
 export const Form = (props: { createNewToDo: Function }) => {
   // const [text, setText] = useState<string>('');
-
   //теперь вместо useState управляем состоянием инпута через стор редакса
   const inputValue = useSelector((state: RootState) => state.formInput.value);
   const dispatch = useDispatch();
