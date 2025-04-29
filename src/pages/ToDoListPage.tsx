@@ -19,7 +19,7 @@ export const ToDoListPage = () => {
 
   //Всплывающие уведомления
   const notifyUpdate = () =>
-    toast('Статус задачи обновлён', {
+    toast('Task status changed', {
       position: 'bottom-right',
       autoClose: 3000,
       hideProgressBar: true,
@@ -32,7 +32,7 @@ export const ToDoListPage = () => {
     });
 
   const notifydelete = () =>
-    toast('Задача удалена', {
+    toast('Task removed successfully!', {
       position: 'bottom-right',
       autoClose: 3000,
       hideProgressBar: true,

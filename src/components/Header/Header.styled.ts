@@ -3,10 +3,6 @@ import styled from 'styled-components';
 import { Theme } from '../../models/themes';
 
 export const HeaderBlock = styled.header<{ theme: Theme }>`
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
   height: 60px;
   background-color: ${({ theme }) => theme.colors.backgroundPrimary};
   transition: background-color 0.2s;
@@ -21,7 +17,6 @@ export const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 `;
 
 //styled-components автоматически добавляет класс active к активной ссылке
@@ -41,17 +36,24 @@ export const StyledNavLink = styled(NavLink)`
 // })` /* стили */ `
 
 export const HeaderButtonWrapper = styled.div`
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: auto;
 `;
 
 export const HeaderButton = styled.button`
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 8px 16px;
+  font-size: 12px;
   background-color: #edf1f2;
   border: none;
   border-radius: 5px;
   outline: none;
+  transition: transform 0.1s;
+  touch-action: manipulation;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
 `;

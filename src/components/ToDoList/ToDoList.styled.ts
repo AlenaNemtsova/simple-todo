@@ -16,7 +16,7 @@ export const TodoListBase = styled.ul`
 export const FailedList = styled(TodoListBase)`
   /* Специфичные стили для невыполненных задач */
   &:empty:after {
-    content: 'Нет задач на выполнение';
+    content: 'No tasks to complete';
   }
 
   &:after {
@@ -34,7 +34,7 @@ export const CompletedList = styled(TodoListBase)`
   padding: 60px 0 0 0;
 
   &:empty:after {
-    content: 'Нет выполненых задач';
+    content: 'No completed tasks';
   }
 
   &:before {

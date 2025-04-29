@@ -9,6 +9,7 @@ import {
   HeaderButtonWrapper,
   HeaderButton,
 } from './Header.styled';
+import { useState } from 'react';
 
 export const Header = () => {
   //стиль для обычного NavLink без styled-components:
@@ -16,7 +17,6 @@ export const Header = () => {
   //   //isActive это объект, поэтому типизируется как объект с полем isActive: boolean
   //   return isActive ? `${classes.link} ${classes.active}` : classes.link;
   // };
-
   const dispatch = useDispatch();
 
   return (
